@@ -1,6 +1,7 @@
 ﻿<!DOCTYPE HTML>
 <html>
 	<head>
+	<script async src="//dn-lbstatics.qbox.me/busuanzi/2.3/busuanzi.pure.mini.js"></script>
 		<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
 		<meta id="viewport" name="viewport" content="width=device-width,user-scalable=no" />
 		<script type="text/javascript" src="21.js"></script>
@@ -45,7 +46,7 @@
 		    });
 		}, false);
 		function dp_submitScore(a,b){
-			if(a&&b>=a&&b>10){
+			if(b>=0){
 				// alert("新纪录哦！你过了"+b+"关!")
 				dp_share(b)
 			}
@@ -55,8 +56,9 @@
 		    document.location.href = mebtnopenurl;
 		}
 		function dp_share(t){
-			document.title = "我在Jimmy的小游戏中飞过了"+t+"关！你能超过我吗？";
-			document.getElementById("share").style.display="";
+			document.title = "我在Jimmy的FlappyBird中飞过了"+t+"关！你能超过我吗？";
+			// document.getElementById("share").style.display="";
+			alert("点击右上角带战绩分享朋友圈");
 			window.shareData.tTitle = document.title;
 		}
 		</script>
