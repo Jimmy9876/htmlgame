@@ -20,7 +20,7 @@ var scores=0;
  */
 function dp_share(t){
             document.title = "我在Jimmy这打飞机得了"+t+"分！你能超过我吗？";
-            alert("点击右上角分享朋友圈");
+            // alert("点击右上角分享朋友圈");
             window.shareData.tTitle = document.title;
         }
 /*
@@ -341,14 +341,15 @@ function start(){
                       enddiv.style.display="block";
                       planscore.innerHTML=scores;
                       dp_share(scores);
-                      alert("点击右上角分享朋友圈");
                       if(document.removeEventListener){
                           mainDiv.removeEventListener("mousemove",yidong,true);
                           bodyobj.removeEventListener("mousemove",bianjie,true);
+                            // alert("点击右上角分享朋友圈");
                       }
                       else if(document.detachEvent){
                           mainDiv.detachEvent("onmousemove",yidong);
                           bodyobj.removeEventListener("mousemove",bianjie,true);
+                              // alert("点击右上角分享朋友圈");
                       }
                       clearInterval(set);
                   }
