@@ -21,6 +21,9 @@ function play68_submitScore(score) {
 }
 
 function updateShare(bestScore) {
+	// document.title = "我在Jimmy的小游戏拿到了"+t+"分！你能超过我吗？";
+	// alert("点击右上角分享朋友圈");
+	// window.shareData.tTitle = document.title;
 	imgUrl ="http://www.dede168.com/icon/mishi.png";
 	lineLink ="http://www.dede168.com/games/mishi/index.html";
 	descContent = "你觉得你反应很快吗？试试就知道！";
@@ -29,12 +32,15 @@ function updateShare(bestScore) {
 }
 
 function updateShareScore(bestScore) {
-	if(bestScore > 0) {
-		shareTitle = "考反应游戏《密室逃脱》我过了" + bestScore + "关，实在是太变态了！";
-	}
-	else{
-		shareTitle = "变态考反应游戏《密室逃脱》能通关你就能闪子弹了！";
-	}
+	document.title = "我在Jimmy的小游戏拿到了"+ bestScore +"分！你能超过我吗？";
+	alert("点击右上角分享朋友圈");
+	window.shareData.tTitle = document.title;
+	// if(bestScore > 0) {
+	// 	shareTitle = "考反应游戏《密室逃脱》我过了" + bestScore + "关，实在是太变态了！";
+	// }
+	// else{
+	// 	shareTitle = "变态考反应游戏《密室逃脱》能通关你就能闪子弹了！";
+	// }
 }
 </script>
 <script type="text/javascript" src="jsgamemin.js"></script>
