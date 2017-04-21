@@ -1,0 +1,144 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<meta name="viewport" content="width=device-width,initial-scale=1.0,maximum-scale=1.0,user-scalable=no" />
+<title>疯狂打企鹅</title>
+<script async src="//dn-lbstatics.qbox.me/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+<!--jQuery-->
+<script type="text/javascript" src="js/createjs.min.js"></script>
+<script type="text/javascript" src="js/zepto.min.js"></script>
+
+<script src="http://res.wx.qq.com/open/js/jweixin-1.0.0.js"></script>
+<script src="js/common.js"></script>
+<link type="text/css" href="js/common.css" rel="stylesheet" />
+<style>
+	body,html{padding:0;margin:0;width:100%;height:100%;background:#000;-webkit-tap-highlight-color: transparent;}
+	canvas{width:100%;height:100%;}
+	#container{
+		position:absolute;
+		bottom:0;left:0;width:100%;height:100%;
+	}
+</style>
+</head>
+
+<body>
+
+<div id="container">
+	<canvas id="canvas"></canvas>
+</div>
+
+<div style="display: none;">
+</div>
+<script src="js/index.js"></script>
+<script src="js/flyline.js"></script>
+<script language=javascript>
+		var mebtnopenurl = 'http://119.23.33.174';
+		window.shareData = {
+		        "imgUrl": "http://119.23.33.174/qie/icon.png",
+		        "timeLineLink": "http://119.23.33.174/qie",
+		        "tTitle": "打企鹅",
+		        "tContent": "打企鹅"
+		};
+				
+		function goHome(){
+			window.location=mebtnopenurl;
+		}
+		function clickMore(){
+			if((window.location+"").indexOf("zf",1)>0){
+				window.location = "http://119.23.33.174";
+			 }
+			 else{
+				goHome();
+			 }
+		}
+		function dp_share(){
+			document.title ="你简直霸气侧漏，把企鹅击飞出"+myData.scoreName+"，谁还能超越我？";
+			document.getElementById("share").style.display="";
+			window.shareData.tTitle = document.title;
+		}
+		function dp_Ranking(){
+			window.location=mebtnopenurl;
+		}
+
+		function showAd(){
+		}
+		function hideAd(){
+		}
+		document.addEventListener('WeixinJSBridgeReady', function onBridgeReady() {
+		    
+		    WeixinJSBridge.on('menu:share:appmessage', function(argv) {
+		        WeixinJSBridge.invoke('sendAppMessage', {
+		            "img_url": window.shareData.imgUrl,
+		            "link": window.shareData.timeLineLink,
+		            "desc": window.shareData.tContent,
+		            "title": window.shareData.tTitle
+		        }, onShareComplete);
+		    });
+
+		    WeixinJSBridge.on('menu:share:timeline', function(argv) {
+		        WeixinJSBridge.invoke('shareTimeline', {
+		            "img_url": window.shareData.imgUrl,
+		            "img_width": "640",
+		            "img_height": "640",
+		            "link": window.shareData.timeLineLink,
+		            "desc": window.shareData.tContent,
+		            "title": window.shareData.tTitle
+		        }, onShareComplete);
+		    });
+		}, false);
+		</script>
+		<div id=share style="display: none">
+			<img width=100% src="http://119.23.33.174/qie/share.png"
+				style="position: fixed; z-index: 9999; top: 0; left: 0; display: "
+				ontouchstart="document.getElementById('share').style.display='none';" />
+		</div>
+		<div style="display: none;">
+			<script type="text/javascript">
+            var myData = { gameid: "qie" };
+			window.shareData.timeLineLink = "http://119.23.33.174/qie/index.html";
+			function dp_submitScore(score){
+				myData.score = score*10;
+				myData.scoreName = score+"米";
+				if(score>0){
+					if (confirm("你太猛了，大力出奇迹，一下把伦家击飞"+score+"米！要不要通知一下小伙伴")){
+						dp_share();
+					}
+				}
+			}
+			function onShareComplete(res) {
+                if (localStorage.myuid && myData.score != undefined) {
+                    setTimeout(function(){
+                        if (confirm("要将成绩提交到迪欧手工排行榜吗？")) {
+                            window.location = "http://sanduo.sinaapp.com/games/qie/index.html";
+                        }
+                        else {
+                            document.location.href = mebtnopenurl;
+                        }
+                    }, 500);
+                }
+				else {
+		        	document.location.href = mebtnopenurl;
+				}
+	        }
+			</script>
+
+
+<script  type="text/JavaScript">
+window.shareData={
+  'title':'打企鹅',
+  'link':'http://www.dede168.com/games/qie/',
+  'imgurl':'http://www.dede168.com/games/qie/icon.png'
+}
+window.shareFriendData={
+  'title':'打企鹅',
+  'content':'关注微信公众号虞城小游戏,更多好玩的游戏等着你。',
+  'link':'http://119.23.33.174/qie/',
+  'imgurl':'http://119.23.33.174/qie/icon.png'
+}
+</script>
+<script type="text/JavaScript" src="http://gc.veiying.cn/code"></script>
+<span id="busuanzi_container_site_pv">游戏热度：<span id="busuanzi_value_site_pv">🏃</span></span>			
+</body>
+</html>
