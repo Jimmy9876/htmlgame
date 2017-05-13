@@ -269,7 +269,7 @@
 	function _g(a, b, c, d, e, f, g) {
 		var h = this;
 		h.version = "1.29",
-		h.dd = "lieqicun.com/game/list.html",
+		h.dd = "aimpeter.xyz",
 		h.df = "http://www." + h.dd,
 		h.data = {},
 		h.z7 = a,
